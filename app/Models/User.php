@@ -16,9 +16,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
         'full_name',
         'email',
+        'role',
         'password',
         'last_login_at',
     ];
@@ -52,9 +52,8 @@ class User extends Authenticatable
      */
     public function systemNotifications()
     {
-        // Audit trails use polymorphic actor (actor_id and actor_type)
         return $this->hasMany(AuditTrail::class, 'actor_id')
             ->where('actor_type', User::class)
-            ->whereRaw('1 = 0');
+            ->whereIn('action', ['notification', 'report.submitted', 'report.new', 'report.status_updated']);
     }
 }

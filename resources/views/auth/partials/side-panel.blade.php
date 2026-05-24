@@ -1,4 +1,4 @@
-﻿@php
+@php
     $panelItems = $items ?? [];
     $roles = $roles ?? [];
     $steps = $steps ?? [];
@@ -6,10 +6,10 @@
 
 <aside class="auth-brand-panel">
     <a href="{{ route('home') }}" class="auth-brand-mark">
-        <img src="{{ asset('img/logo.png') }}" alt="HighGuy_37 Logo" style="width: 48px; height: 48px; border-radius: 8px;">
+        <img src="{{ asset('img/logo.png') }}" alt="Frank Logo" style="width: 48px; height: 48px; border-radius: 8px; object-fit: contain;">
         <span class="auth-brand-copy">
-            <strong>HighGuy_37-KIT</strong>
-            <span>HighGuy_37 Starter Kit</span>
+            <strong>Smart Citizen</strong>
+            <span>Reporting System</span>
         </span>
     </a>
 
@@ -69,3 +69,4 @@
         </div>
     @endif
 </aside>
+

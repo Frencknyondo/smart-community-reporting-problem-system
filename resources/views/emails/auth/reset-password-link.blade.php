@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,13 +19,13 @@
                 </div>
                 <h1 style="margin:16px 0 10px; font-size:28px; line-height:1.2; color:#102f45;">Reset Your Password</h1>
                 <p style="margin:0 auto; max-width:430px; font-size:15px; line-height:1.75; color:#516d80;">
-                    A request was received to reset the password for your HighGuy_37 Starter Kit account.
+                    A request was received to reset the password for your Frank Starter Kit account.
                 </p>
             </div>
 
             <div style="padding:24px 22px;">
                 <p style="margin:0 0 14px; font-size:15px; line-height:1.75; color:#516d80; word-break:break-word;">
-                    Hello{{ !empty($user->name) ? ' ' . e($user->name) : '' }},
+                    Hello{{ !empty($user->full_name) ? ' ' . e($user->full_name) : '' }},
                 </p>
                 <p style="margin:0 0 18px; font-size:15px; line-height:1.75; color:#516d80;">
                     Click the button below to choose a new password. This reset link will expire in {{ $expireMinutes }}
@@ -60,9 +60,9 @@
 
             <div
                 style="padding:18px 22px 22px; border-top:1px solid rgba(16,152,212,0.12); background:#fcfeff; text-align:center;">
-                <p style="margin:0 0 6px; font-size:13px; font-weight:400; color:#102f45;">HighGuy_37 Starter Kit</p>
+                <p style="margin:0 0 6px; font-size:13px; font-weight:400; color:#102f45;">Frank Starter Kit</p>
                 <p style="margin:0; font-size:12px; line-height:1.7; color:#6b8597;">
-                    HighGuy_37 Monitoring Dashboard
+                    Frank Monitoring Dashboard
                 </p>
             </div>
         </div>
@@ -70,3 +70,4 @@
 </body>
 
 </html>
+

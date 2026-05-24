@@ -32,8 +32,8 @@ class NotificationController extends Controller
             'notifications' => $notifications->map(function ($notification) {
                 return [
                     'id' => $notification->id,
-                    'title' => $notification->title ?? 'Notification',
-                    'message' => $notification->message ?? '',
+                    'title' => $notification->metadata['title'] ?? $notification->subject_name ?? 'Notification',
+                    'message' => $notification->description ?? '',
                     'status' => $notification->status ?? 'read',
                     'status_label' => ucfirst($notification->status ?? 'read'),
                     'time' => optional($notification->created_at)?->diffForHumans() ?? 'Just now',

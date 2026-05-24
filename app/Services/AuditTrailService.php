@@ -216,7 +216,7 @@ class AuditTrailService
             return null;
         }
 
-        foreach (['name', 'full_name', 'email', 'title'] as $attribute) {
+        foreach (['full_name', 'email', 'title'] as $attribute) {
             $value = $model->getAttribute($attribute);
 
             if (filled($value)) {

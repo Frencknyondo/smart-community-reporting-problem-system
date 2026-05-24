@@ -1,4 +1,4 @@
-@extends('layouts.highguyDashboardLayout')
+@extends('layouts.frankDashboardLayout')
 
 @section('content')
 <div class="container-fluid px-3 px-lg-4 py-4 dashboard-page">
@@ -192,3 +192,4 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 @endpush
+

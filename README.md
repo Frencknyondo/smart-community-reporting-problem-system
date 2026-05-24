@@ -1,7 +1,7 @@
 <img width="2560" height="1600" alt="Screenshot 2026-04-26 215751" src="https://github.com/user-attachments/assets/0f6be489-1a67-40d3-baa1-fa96077048c1" />
-# HighGuy_37 Starter Kit
+# Frank Starter Kit
 
-HighGuy_37 Starter Kit is a Laravel starter project built for students and developers who want a clean foundation for small to medium web applications. It includes custom authentication, public pages, a protected dashboard, profile pages, notification routes, and reusable Blade layouts styled with Bootstrap and custom CSS.
+Frank Starter Kit is a Laravel starter project built for students and developers who want a clean foundation for small to medium web applications. It includes custom authentication, public pages, a protected dashboard, profile pages, notification routes, and reusable Blade layouts styled with Bootstrap and custom CSS.
 
 The goal is simple: give you a working Laravel base that is easy to read, extend, and redesign.
 
@@ -64,7 +64,7 @@ cp .env.example .env
 Then update the database values in `.env`:
 
 ```env
-APP_NAME="HighGuy_37 Starter Kit"
+APP_NAME="Frank Starter Kit"
 APP_ENV=local
 APP_KEY=
 APP_DEBUG=true
@@ -174,4 +174,5 @@ Built and maintained by Hagai Harold Ngobey.
 <img width="2560" height="1600" alt="Screenshot 2026-04-26 215832" src="https://github.com/user-attachments/assets/a590967b-1145-421d-bb47-61747cf72337" />
 <img width="2560" height="1600" alt="Screenshot 2026-04-26 215815" src="https://github.com/user-attachments/assets/a61352e4-efd8-4a00-81d1-6469bbe993af" />
 <img width="2560" height="1600" alt="Screenshot 2026-04-26 215806" src="https://github.com/user-attachments/assets/3d637a28-05a6-4b56-872c-e9f05a5b1776" />
+
 

@@ -1,12 +1,12 @@
-﻿<header class="header-wrapper">
+<header class="header-wrapper">
     <div class="header-container">
         <div class="header-branding">
              <div class="header-logo">
-                <img src="{{ asset('img/logo.png') }}" alt="Logo" style="width: 38px; height: 38px; border-radius: 8px;">
+                <img src="{{ asset('img/logo.png') }}" alt="Logo" style="width: 38px; height: 38px; border-radius: 8px; object-fit: contain;">
             </div>
             <span class="header-name">
-                <span class="header-title">Highguy_37</span>
-                <span class="header-subtitle">Laravel Starter Kit</span>
+                <span class="header-title">Smart Community Problem Reporting System</span>
+                <span class="header-subtitle"> - Making Communities Better Through Reporting</span>
             </span>
         </div>
 
@@ -28,3 +28,4 @@
         </nav>
     </div>
 </header>
+

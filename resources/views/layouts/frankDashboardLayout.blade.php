@@ -3,16 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>HighGuy_37 Dashboard | HighGuy_37 Starter Kit</title>
+    <title>SCPRF  Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link href="{{ asset('css/rootcolor.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/highguyHeader.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/highguySidebar.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/highguyLayout.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/frankHeader.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/frankSidebar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/frankLayout.css') }}" rel="stylesheet">
     @stack('styles')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -21,8 +21,29 @@
     @php
         $pageHeader = match (true) {
             request()->is('dashboard') || request()->routeIs('dashboard.index') => [
-                'title' => 'System Dashboard',
-                'subtitle' => 'Monitor your application performance and stats from one workspace.',
+                'title' => 'Dashboard',
+                'subtitle' => 'You will be redirected to the correct workspace for your role.',
+            ],
+            request()->routeIs('dashboard.admin.*') => [
+                'title' => 'Admin Dashboard',
+                'subtitle' => 'Administrator workspace for the Smart Citizen Reporting System.',
+            ],
+            request()->routeIs('dashboard.council.*') => [
+                'title' => 'Council Dashboard',
+                'subtitle' => 'Council workspace for managing reported community issues.',
+            ],
+            request()->routeIs('dashboard.citizen.reports.create') => [
+                'title' => 'Report an Issue',
+                'subtitle' => 'Submit a community problem with category, media, and map location.',
+            ],
+            request()->routeIs('dashboard.citizen.index') => null,
+            request()->routeIs('dashboard.reports.index') => [
+                'title' => 'Reported Issues',
+                'subtitle' => 'Review submitted reports and monitor issue locations.',
+            ],
+            request()->routeIs('dashboard.users.index') => [
+                'title' => 'User Management',
+                'subtitle' => 'Manage users and role visibility for the reporting system.',
             ],
             request()->is('dashboard/notifications*') => [
                 'title' => 'Direct Notifications',
@@ -43,15 +64,15 @@
         };
     @endphp
 
-    @include('components.highguyHeader')
-    @include('components.highguySidebar')
+    @include('components.frankHeader')
+    @include('components.frankSidebar')
 
     <main class="dashboard-page-content" @if($pageHeader) data-dashboard-page-header="true" @endif>
         @if ($pageHeader)
             <div class="px-3 px-lg-4 pt-4">
                 <section class="dashboard-shared-page-header">
                     <div class="dashboard-shared-page-header__content">
-                        <x-highguy-page-header :title="$pageHeader['title']" :subtitle="$pageHeader['subtitle']" />
+                        <x-frank-page-header :title="$pageHeader['title']" :subtitle="$pageHeader['subtitle']" />
                     </div>
 
                     @hasSection('page_header_actions')
@@ -89,7 +110,7 @@
             gap: 0.75rem;
             flex-shrink: 0;
         }
-        .highguy-shared-page-header__title {
+        .frank-shared-page-header__title {
             margin: 0;
             font-size: clamp(1.2rem, 1.5vw, 1.5rem);
             line-height: 1.25;
@@ -101,7 +122,7 @@
             gap: 0.55rem;
         }
 
-        .highguy-shared-page-header__subtitle {
+        .frank-shared-page-header__subtitle {
             max-width: 760px;
             margin: 0.45rem 0 0;
             color: var(--color-slate-500);
@@ -121,24 +142,24 @@
                 justify-content: flex-start;
                 flex-wrap: wrap;
             }
-            .highguy-shared-page-header__subtitle {
+            .frank-shared-page-header__subtitle {
                 font-size: 0.8rem;
             }
         }
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('js/highguySidebar.js') }}"></script>
-    <script src="{{ asset('js/highguyButtonSpinner.js') }}"></script>
-    <script src="{{ asset('js/highguyAlerts.js') }}"></script>
+    <script src="{{ asset('js/frankSidebar.js') }}"></script>
+    <script src="{{ asset('js/frankButtonSpinner.js') }}"></script>
+    <script src="{{ asset('js/frankAlerts.js') }}"></script>
     @yield('scripts')
 
     @if (session('success') && ! View::hasSection('disable_success_swal'))
         <script>
-            if (typeof showSystemAlert === 'function') {
-                showSystemAlert({
+            if (typeof showAcademicUiAlert === 'function') {
+                showAcademicUiAlert({
                     theme: 'success',
-                    title: 'Action completed',
+                    title: 'Successful',
                     text: @js(session('success')),
                     timer: 2600,
                     showConfirmButton: false
@@ -149,8 +170,8 @@
 
     @if (session('error'))
         <script>
-            if (typeof showSystemAlert === 'function') {
-                showSystemAlert({
+            if (typeof showAcademicUiAlert === 'function') {
+                showAcademicUiAlert({
                     theme: 'danger',
                     title: 'Something went wrong',
                     text: @js(session('error')),
@@ -164,3 +185,4 @@
     @stack('scripts')
 </body>
 </html>
+

@@ -1,4 +1,4 @@
-﻿@extends('layouts.auth')
+@extends('layouts.auth')
 
 @section('title', 'Reset Password')
 
@@ -10,7 +10,7 @@
                     <a href="{{ route('home') }}" class="auth-login-brand">
                         <i class="bi bi-cone-striped auth-login-brand-icon" aria-hidden="true"></i>
                         <span>
-                            <strong>HighGuy_37 Starter Kit</strong>
+                            <strong>Frank Starter Kit</strong>
                             <small>Secure project portal</small>
                         </span>
                     </a>
@@ -114,5 +114,6 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('js/highguyAuth.js') }}"></script>
+    <script src="{{ asset('js/frankAuth.js') }}"></script>
 @endsection
+

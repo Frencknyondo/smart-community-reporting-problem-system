@@ -1,4 +1,4 @@
-﻿@extends('layouts.auth')
+@extends('layouts.auth')
 
 @section('title', 'Login')
 
@@ -10,21 +10,39 @@
                     <a href="{{ route('home') }}" class="auth-login-brand">
                         <img src="{{ asset('img/logo.png') }}" alt="Logo" class="auth-login-brand-icon" style="width: 38px; height: 38px; border-radius: 8px; margin-right: 12px;">
                         <span>
-                            <strong>HighGuy_37 Starter Kit</strong>
-                            <small>Student Friendly Portal</small>
+                            <strong>Smart Citizen Reporting System</strong>
+                            <small>Community issue reporting portal</small>
                         </span>
                     </a>
 
                     <div class="auth-login-copy">
-                        <h1>Secure access to your project dashboard</h1>
+                        <h1>Welcome to Smart Citizen Reporting System</h1>
+                        <p>The Smart Citizen Reporting System (SCRS) helps citizens report community problems and improves communication with local authorities.</p>
                     </div>
 
                     <div class="auth-login-guide">
-                        <ul>
-                            <li>Managed authentication for your web app</li>
-                            <li>Modern dashboard with ready-to-use components</li>
-                            <li>Built for speed and educational clarity</li>
-                        </ul>
+                        <div class="auth-feature-section">
+                            <h3><i class="bi bi-people"></i> Citizens</h3>
+                            <ul>
+                                <li>Report community issues online</li>
+                                <li>Upload images and locations of problems</li>
+                                <li>Track issue progress and updates</li>
+                                <li>View complaint history</li>
+                                <li>Support issues through comments and upvotes</li>
+                            </ul>
+                        </div>
+
+                        <div class="auth-feature-section">
+                            <h3><i class="bi bi-building"></i> Councils / Local Authorities</h3>
+                            <ul>
+                                <li>Receive and manage reported issues</li>
+                                <li>Update issue status and resolutions</li>
+                                <li>Monitor community problem trends</li>
+                                <li>Generate reports and analytics</li>
+                                <li>Improve public service delivery</li>
+                            </ul>
+                        </div>
+
                     </div>
 
                     <div class="auth-login-watermark" aria-hidden="true">
@@ -34,6 +52,13 @@
 
                 <div class="auth-login-form-panel">
                     <div class="auth-login-form-card">
+                        <div class="auth-login-top-link">
+                            <a href="{{ route('home') }}" class="auth-login-back-link">
+                                <i class="bi bi-arrow-left"></i>
+                                <span>Back Home</span>
+                            </a>
+                        </div>
+
                         <div class="auth-login-title-row">
                             <h2 class="auth-login-title">
                                 <i class="bi bi-shield-lock"></i>
@@ -84,9 +109,9 @@
                             </button>
 
                             <div class="auth-login-back-wrap">
-                                <a href="{{ route('home') }}" class="auth-login-back-link">
-                                    <i class="bi bi-arrow-left"></i>
-                                    <span>Back to Home</span>
+                                <a href="{{ route('register') }}" class="auth-login-back-link">
+                                    <i class="bi bi-person-plus"></i>
+                                    <span>Don't have Account? Sign in</span>
                                 </a>
                             </div>
                         </form>
@@ -98,5 +123,6 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('js/highguyAuth.js') }}"></script>
+    <script src="{{ asset('js/frankAuth.js') }}"></script>
 @endsection
+

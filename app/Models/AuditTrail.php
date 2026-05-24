@@ -30,6 +30,7 @@ class AuditTrail extends Model
         'ip_address',
         'user_agent',
         'status_code',
+        'status',
         'old_values',
         'new_values',
         'metadata',

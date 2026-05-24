@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@yield('title', 'HighGuy_37 Starter Kit')</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <title>@yield('title', 'Smart Community Problem Reporting System')</title>
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,10 +20,10 @@
 
 
     <!-- Custom CSS -->
-    <link href="{{ asset('css/highguyPublicHeader.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/highguyPublicFooter.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/frankPublicHeader.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/frankPublicFooter.css') }}" rel="stylesheet">
 
-    <link href="{{ asset('css/highguyAuth.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/frankAuth.css') }}" rel="stylesheet">
     @stack('critical-head')
     @stack('styles')
     <style>
@@ -53,19 +53,9 @@
         }
     </style>
 
-    <style>
-        body.has-fixed-footer {
-            padding-bottom: 56px; /* Space for the footer */
-        }
-        @media (max-width: 768px) {
-            body.has-fixed-footer {
-                padding-bottom: 80px; /* Taller footer on mobile */
-            }
-        }
-    </style>
 </head>
 
-<body class="has-fixed-footer d-flex flex-column min-vh-100" data-disable-navigation-overlay="1" data-inline-spinner-links="1" data-inline-spinner-theme="blue">
+<body class="d-flex flex-column min-vh-100" data-disable-navigation-overlay="1" data-inline-spinner-links="1" data-inline-spinner-theme="blue">
     @stack('page_loader')
     @include('components.header')
 
@@ -79,11 +69,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom JS -->
-    <script src="{{ asset('js/highguyPublicHeader.js') }}"></script>
-    <script src="{{ asset('js/highguyButtonSpinner.js') }}"></script>
+    <script src="{{ asset('js/frankPublicHeader.js') }}"></script>
+    <script src="{{ asset('js/frankButtonSpinner.js') }}"></script>
     @yield('scripts')
     @stack('scripts')
 
 </body>
 
 </html>
+

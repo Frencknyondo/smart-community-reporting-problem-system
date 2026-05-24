@@ -5,7 +5,7 @@
         : null;
     $headerNotifications = $notificationSource ? $notificationSource->latest()->limit(6)->get() : collect();
     $headerUnreadCount = $notificationSource ? (clone $notificationSource)->where('status', 'unread')->count() : 0;
-    $displayName = $currentUser->full_name ?? $currentUser->name ?? 'User';
+    $displayName = $currentUser->full_name ?? 'User';
 @endphp
 
 <header id="main-header" class="d-flex align-items-center justify-content-between bg-white border-bottom shadow-sm px-3">
@@ -86,8 +86,8 @@
                         >
                             <div class="d-flex align-items-start justify-content-between gap-2">
                                 <div class="pe-2 notification-copy">
-                                    <div class="fw-semibold text-wrap notification-title">{{ $notification->title }}</div>
-                                    <div class="text-muted small mb-1 notification-message">{{ $notification->message }}</div>
+                                    <div class="fw-semibold text-wrap notification-title">{{ $notification->metadata['title'] ?? $notification->subject_name ?? 'Notification' }}</div>
+                                    <div class="text-muted small mb-1 notification-message">{{ $notification->description }}</div>
                                     <div class="small text-muted notification-time">{{ $notification->created_at->diffForHumans() }}</div>
                                 </div>
                                 <span class="badge notification-status {{ $notification->status === 'unread' ? 'notification-status-unread' : 'notification-status-read' }}">

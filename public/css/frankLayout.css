@@ -43,7 +43,7 @@ body.sidebar-collapsed {
     box-sizing: border-box;
 }
 
-.highguy-page-content {
+.frank-page-content {
     width: 100%;
     max-width: 100%;
     min-width: 0;
@@ -51,25 +51,25 @@ body.sidebar-collapsed {
     scroll-behavior: smooth;
 }
 
-.highguy-page-body {
+.frank-page-body {
     width: 100%;
     max-width: 100%;
     min-width: 0;
     padding: 0 0 1.5rem;
 }
 
-.highguy-page-body > .container,
-.highguy-page-body > .container-fluid {
+.frank-page-body > .container,
+.frank-page-body > .container-fluid {
     width: 100%;
     max-width: 100%;
     min-width: 0;
 }
 
-.highguy-page-body .row {
+.frank-page-body .row {
     min-width: 0;
 }
 
-.highguy-page-body [class*="col-"] {
+.frank-page-body [class*="col-"] {
     min-width: 0;
 }
 
@@ -78,7 +78,8 @@ body.sidebar-collapsed {
         padding-left: 0;
     }
 
-    .highguy-page-body {
+    .Frank-page-body {
         padding-bottom: 1rem;
     }
 }
+

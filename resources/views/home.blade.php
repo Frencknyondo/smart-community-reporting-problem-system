@@ -1,8 +1,9 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
-@section('title', 'HighGuy_37 - Simple Laravel Starter Kit')
+@section('title', 'Smart Community Problem Reporting System')
 
 @push('critical-head')
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     <style>
         .hero-section {
             padding: 120px 0;
@@ -197,14 +198,26 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            padding: 0 !important;
         }
 
-        .hero-logo-card img {
+        .home-hero-map {
             width: 100%;
-            max-width: 360px;
-            height: auto;
-            object-fit: contain;
+            height: 420px;
+            min-height: 360px;
             display: block;
+        }
+
+        .home-map-popup strong {
+            display: block;
+            color: #111827;
+            margin-bottom: 2px;
+        }
+
+        .home-map-popup span {
+            display: block;
+            color: #64748b;
+            font-size: 0.82rem;
         }
 
         .home-section-title {
@@ -220,6 +233,85 @@
         .stack-usage-card p {
             font-size: 0.95rem;
             line-height: 1.65;
+        }
+
+        .report-step-card,
+        .recent-report-card,
+        .stat-card {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 16px 30px rgba(15, 23, 42, 0.05);
+        }
+
+        .report-step-card {
+            padding: 24px;
+        }
+
+        .report-step-card h4,
+        .recent-report-card h5,
+        .stat-card h3 {
+            font-weight: 700;
+        }
+
+        .report-step-card p,
+        .recent-report-card p,
+        .stat-card p {
+            color: #475569;
+            margin-bottom: 0;
+        }
+
+        .stat-card {
+            padding: 28px;
+            background: #fffbeb;
+            border-color: #f5ddb7;
+        }
+
+        .stat-number {
+            font-size: 1.85rem;
+            line-height: 1;
+            font-weight: 800;
+            color: #92400e;
+        }
+
+        @media (max-width: 575.98px) {
+            .stat-number {
+                font-size: 1.4rem;
+            }
+        }
+
+        .recent-report-card {
+            padding: 18px;
+            margin-bottom: 1rem;
+        }
+
+        .recent-report-time {
+            color: #64748b;
+            font-size: 0.92rem;
+        }
+
+        .footer-dark {
+            background: #111827;
+            color: #e5e7eb;
+        }
+
+        .footer-dark a {
+            color: #f8fafc;
+            text-decoration: none;
+        }
+
+        .footer-dark a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-dark .footer-link-title {
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .footer-dark .footer-note {
+            color: #94a3b8;
+            font-size: 0.92rem;
         }
 
         @media (max-width: 991.98px) {
@@ -246,8 +338,9 @@
                 padding: 2rem !important;
             }
 
-            .hero-logo-card img {
-                max-width: 280px;
+            .home-hero-map {
+                height: 340px;
+                min-height: 280px;
             }
         }
 
@@ -295,12 +388,12 @@
             .hero-logo-card {
                 min-height: 220px;
                 margin-top: 1.6rem;
-                padding: 1.4rem !important;
                 border-radius: 18px !important;
             }
 
-            .hero-logo-card img {
-                max-width: 220px;
+            .home-hero-map {
+                height: 280px;
+                min-height: 220px;
             }
 
             .tech-pill {
@@ -354,32 +447,30 @@
         <div class="container text-center text-lg-start">
             <div class="row align-items-center">
                 <div class="col-lg-7">
-                    <h1 class="home-hero-title fw-bold mb-4">Master Laravel with <span class="text-primary">HighGuy_37</span></h1>
+                    <h1 class="home-hero-title fw-bold mb-4">Smart Community Problem Reporting System</h1>
                     <p class="home-hero-copy text-muted mb-5">
-                        A beginner-friendly starter kit designed for students and developers to jumpstart their real-world
-                        web applications. Built with Laravel, Bootstrap, and Best Practices.
+                        Report community issues quickly and transparently. Submit potholes, illegal dumping, broken streetlights,
+                        and other neighborhood problems in one easy place.
                     </p>
                     <div class="home-hero-actions justify-content-center justify-content-lg-start">
-                        <a href="/login" class="btn btn-primary btn-premium shadow-lg">
-                            Get Started <i class="bi bi-arrow-right ms-2"></i>
+                        <a href="{{ route('report.start') }}" class="btn btn-primary btn-premium shadow-lg">
+                            Report an Issue <i class="bi bi-arrow-right ms-2"></i>
                         </a>
-                        <a href="https://github.com/harryhagai" target="_blank" class="btn btn-outline-dark btn-premium">
-                            <i class="bi bi-github me-2"></i> Star on GitHub
+                        <a href="/about" class="btn btn-outline-dark btn-premium">
+                            Learn More <i class="bi bi-info-circle ms-2"></i>
                         </a>
                     </div>
 
                     <div class="mt-5">
-                        <div class="tech-pill">Laravel 12</div>
-                        <div class="tech-pill">Bootstrap 5</div>
-                        <div class="tech-pill">MySQL</div>
-                        <div class="tech-pill">Blade</div>
+                        <div class="tech-pill">Community Reports</div>
+                        <div class="tech-pill">Track Progress</div>
+                        <div class="tech-pill">Safe Submission</div>
+                        <div class="tech-pill">Local Action</div>
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <div class="hero-logo-card p-5 bg-white rounded-4 shadow-sm border">
-                        <img src="{{ asset('img/Laravel Framework Logo White Mode Pin.jpg') }}"
-                            alt="Laravel Framework Logo"
-                            loading="eager">
+                    <div class="hero-logo-card bg-white rounded-4 shadow-sm border">
+                        <div id="home-hero-map" class="home-hero-map" aria-label="Smart Community issue map"></div>
                     </div>
                 </div>
             </div>
@@ -392,12 +483,14 @@
                 <div class="col-lg-7">
                     <span class="stack-usage-label">
                         <i class="bi bi-layers"></i>
-                        Tech Stack Usage
+                        How It Helps
                     </span>
-                    <h2 class="home-section-title fw-bold mb-3">Stacks Used in This Starter Kit</h2>
+                    <h2 class="home-section-title fw-bold mb-3">What Smart Community Problem Reporting System Delivers</h2>
                     <p class="text-muted mb-lg-0">
-                        These are the core technologies behind this starter kit and how each one supports the application
-                        during development.
+                        A modern digital platform that enables citizens to report community problems, track issue progress, and improve communication between the public and local authorities.
+                    </p>
+                    <p class="text-muted mt-3">
+                        The system helps communities respond faster to public issues such as potholes, broken streetlights, flooding, garbage dumping, drainage problems, and damaged infrastructure.
                     </p>
                 </div>
                 <div class="col-lg-5 text-lg-end">
@@ -406,56 +499,78 @@
                     </a>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <section class="stack-usage-section py-5 bg-white">
+        <div class="container py-4">
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="stack-usage-card">
-                        <div class="stack-usage-icon"><i class="bi bi-braces"></i></div>
-                        <h4 class="fw-bold mb-2">Laravel 12</h4>
-                        <p class="text-muted mb-0">
-                            Handles routing, authentication, middleware, models, migrations, controllers, and the main
-                            backend application structure.
-                        </p>
+                <div class="col-lg-5">
+                    <div class="report-step-card">
+                        <span class="stack-usage-label">
+                            <i class="bi bi-geo-alt"></i>
+                            How to report a problem
+                        </span>
+                        <div class="mt-3">
+                            <p class="mb-3"><strong>1.</strong> Enter a nearby UK postcode, or street name and area</p>
+                            <p class="mb-3"><strong>2.</strong> Locate the problem on a map of the area</p>
+                            <p class="mb-3"><strong>3.</strong> Enter details of the problem</p>
+                            <p class="mb-0"><strong>4.</strong> We send it to the council on your behalf</p>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mt-3">
+                        <div class="col-4">
+                            <div class="stat-card text-center">
+                                <div class="stat-number">23,271</div>
+                                <p class="mb-0">reports in past week</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-card text-center">
+                                <div class="stat-number">59,495</div>
+                                <p class="mb-0">fixed in past month</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-card text-center">
+                                <div class="stat-number">15,195,828</div>
+                                <p class="mb-0">updates on reports</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="stack-usage-card">
-                        <div class="stack-usage-icon"><i class="bi bi-filetype-php"></i></div>
-                        <h4 class="fw-bold mb-2">PHP 8.2+</h4>
-                        <p class="text-muted mb-0">
-                            Runs the Laravel project and powers server-side logic, services, validation, and business
-                            rules.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="stack-usage-card">
-                        <div class="stack-usage-icon"><i class="bi bi-bootstrap"></i></div>
-                        <h4 class="fw-bold mb-2">Bootstrap 5</h4>
-                        <p class="text-muted mb-0">
-                            Builds responsive layouts, grid structures, buttons, spacing, and reusable interface
-                            components.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="stack-usage-card">
-                        <div class="stack-usage-icon"><i class="bi bi-layout-text-window-reverse"></i></div>
-                        <h4 class="fw-bold mb-2">Blade Templates</h4>
-                        <p class="text-muted mb-0">
-                            Organizes pages, layouts, components, and sections so the frontend stays easy to maintain and
-                            extend.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="stack-usage-card">
-                        <div class="stack-usage-icon"><i class="bi bi-database"></i></div>
-                        <h4 class="fw-bold mb-2">MySQL Database</h4>
-                        <p class="text-muted mb-0">
-                            Stores users, audit trails, notifications, and other data needed by the dashboard and auth
-                            flow.
-                        </p>
+                <div class="col-lg-7">
+                    <div class="recent-report-card">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h5 class="mb-0">Recently reported problems</h5>
+                            <span class="text-muted">Live feed</span>
+                        </div>
+                        <div class="mb-3">
+                            <strong>More GCC flytipping</strong>
+                            <p class="mb-1">Beith Street, Partickhill, Partick, Glasgow, Glasgow City, Alba / Scotland, G11 6QP, United Kingdom.</p>
+                            <div class="recent-report-time">17:00 today</div>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Anti social parking on the downs</strong>
+                            <p class="mb-1">Circular Road, Sneyd Park, Bristol, City of Bristol, West of England, England, BS9 1NE, United Kingdom.</p>
+                            <div class="recent-report-time">16:59 today</div>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Flytipping outside 66 Fingal Street again</strong>
+                            <p class="mb-1">Room 1, 66, Fingal Street, Greenwich, SE10 0JJ.</p>
+                            <div class="recent-report-time">16:59 today</div>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Metal BBQ dumped on Park Rd Isleworth</strong>
+                            <p class="mb-1">Park Road, Spring Grove, London Borough of Hounslow, Greater London, England, TW7 6AE, United Kingdom.</p>
+                            <div class="recent-report-time">16:58 today</div>
+                        </div>
+                        <div>
+                            <strong>Bed bases</strong>
+                            <p class="mb-1">Roshni Ghar West, Woodborough Street, Baptist Mills, Easton, Bristol, City of Bristol, West of England, England, BS5 0JD, United Kingdom.</p>
+                            <div class="recent-report-time">16:57 today</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -468,12 +583,11 @@
                 <div class="col-lg-7">
                     <span class="stack-usage-label">
                         <i class="bi bi-box-seam"></i>
-                        Starter Features
+                        Core Features
                     </span>
-                    <h2 class="home-section-title fw-bold mb-3">Everything You Need to Start</h2>
+                    <h2 class="home-section-title fw-bold mb-3">Built for Community Issue Reporting</h2>
                     <p class="text-muted mb-lg-0">
-                        A clean Laravel foundation with ready-to-use essentials for building real-world applications
-                        faster.
+                        Essential reporting tools, real-time updates, and citizen-focused features designed to support local governance.
                     </p>
                 </div>
                 <div class="col-lg-5 text-lg-end">
@@ -486,29 +600,55 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
                     <div class="stack-usage-card">
-                        <div class="stack-usage-icon"><i class="bi bi-shield-lock"></i></div>
-                        <h4 class="fw-bold mb-2">Auth System</h4>
+                        <div class="stack-usage-icon"><i class="bi bi-list-task"></i></div>
+                        <h4 class="fw-bold mb-2">Issue Tracking System</h4>
                         <p class="text-muted mb-0">
-                            Ready-to-use login, registration, and password recovery powered by standard Laravel patterns.
+                            Track reported problems through different stages such as Open, In Progress, and Resolved with real-time updates.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="stack-usage-card">
-                        <div class="stack-usage-icon"><i class="bi bi-layout-sidebar-inset"></i></div>
-                        <h4 class="fw-bold mb-2">Dashboard</h4>
+                        <div class="stack-usage-icon"><i class="bi bi-geo-alt"></i></div>
+                        <h4 class="fw-bold mb-2">Interactive Maps</h4>
                         <p class="text-muted mb-0">
-                            A modern sidebar-based dashboard with basic stats and clean placeholders for your project
-                            data.
+                            Allows users to pinpoint exact problem locations using Google Maps or OpenStreetMap integration.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="stack-usage-card">
-                        <div class="stack-usage-icon"><i class="bi bi-brush"></i></div>
-                        <h4 class="fw-bold mb-2">Easy Theme</h4>
+                        <div class="stack-usage-icon"><i class="bi bi-people"></i></div>
+                        <h4 class="fw-bold mb-2">Community Engagement</h4>
                         <p class="text-muted mb-0">
-                            Clean Blade layouts and CSS structures that you can quickly customize to fit your own brand.
+                            Citizens can support reports through upvotes, comments, and shared community feedback to increase issue visibility.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="stack-usage-card">
+                        <div class="stack-usage-icon"><i class="bi bi-bell"></i></div>
+                        <h4 class="fw-bold mb-2">Notifications & Alerts</h4>
+                        <p class="text-muted mb-0">
+                            Receive instant Email or SMS notifications whenever the status of a reported issue changes.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="stack-usage-card">
+                        <div class="stack-usage-icon"><i class="bi bi-bar-chart"></i></div>
+                        <h4 class="fw-bold mb-2">Analytics Dashboard</h4>
+                        <p class="text-muted mb-0">
+                            Provides statistics, charts, and reports to help authorities monitor community issues and improve decision-making.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="stack-usage-card">
+                        <div class="stack-usage-icon"><i class="bi bi-camera"></i></div>
+                        <h4 class="fw-bold mb-2">Media Upload Support</h4>
+                        <p class="text-muted mb-0">
+                            Users can upload images and videos as evidence to help authorities understand issues more clearly.
                         </p>
                     </div>
                 </div>
@@ -520,3 +660,62 @@
 
 
 @endsection
+
+@push('scripts')
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mapElement = document.getElementById('home-hero-map');
+            if (!mapElement || typeof L === 'undefined') return;
+
+            const center = [{{ config('map.default_center.lat') }}, {{ config('map.default_center.lng') }}];
+            const map = L.map(mapElement, {
+                zoomControl: false,
+                scrollWheelZoom: false
+            }).setView(center, {{ config('map.default_zoom') }});
+
+            L.tileLayer(@js(config('map.tiles.url')), {
+                attribution: @js(config('map.tiles.attribution')),
+                minZoom: {{ config('map.min_zoom') }},
+                maxZoom: {{ config('map.max_zoom') }}
+            }).addTo(map);
+
+            L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+            const points = [
+                {
+                    lat: center[0],
+                    lng: center[1],
+                    title: 'Community Report Center',
+                    text: 'Click Report an Issue to submit a public problem.'
+                },
+                {
+                    lat: center[0] + 0.018,
+                    lng: center[1] - 0.021,
+                    title: 'Road Issue',
+                    text: 'Example pothole report location.'
+                },
+                {
+                    lat: center[0] - 0.016,
+                    lng: center[1] + 0.024,
+                    title: 'Flooding Alert',
+                    text: 'Example drainage and flooding location.'
+                }
+            ];
+
+            const bounds = [];
+            points.forEach(function (point) {
+                bounds.push([point.lat, point.lng]);
+                L.marker([point.lat, point.lng])
+                    .addTo(map)
+                    .bindPopup(`<div class="home-map-popup"><strong>${point.title}</strong><span>${point.text}</span></div>`);
+            });
+
+            map.fitBounds(bounds, { padding: [34, 34], maxZoom: 13 });
+            setTimeout(function () {
+                map.invalidateSize();
+            }, 250);
+        });
+    </script>
+@endpush
+

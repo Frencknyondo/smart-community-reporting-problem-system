@@ -27,7 +27,7 @@ return [
         'search_limit' => (int) env('MAP_GEOCODER_SEARCH_LIMIT', 5),
         'cache_ttl_minutes' => (int) env('MAP_GEOCODER_CACHE_TTL_MINUTES', 15),
         'verify_ssl' => filter_var(env('MAP_GEOCODER_VERIFY_SSL', true), FILTER_VALIDATE_BOOL),
-        'user_agent' => env('MAP_GEOCODER_USER_AGENT', env('APP_NAME', 'HighGuy') . '/1.0'),
+        'user_agent' => env('MAP_GEOCODER_USER_AGENT', env('APP_NAME', 'Frank') . '/1.0'),
         'autocomplete' => [
             'provider' => env('MAP_AUTOCOMPLETE_PROVIDER', env('MAP_GEOCODER_PROVIDER', 'locationiq')),
             'base_url' => env('MAP_AUTOCOMPLETE_BASE_URL', 'https://api.locationiq.com/v1'),
@@ -36,3 +36,4 @@ return [
         ],
     ],
 ];
+

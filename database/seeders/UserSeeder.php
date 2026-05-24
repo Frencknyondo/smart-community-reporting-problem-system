@@ -15,22 +15,22 @@ class UserSeeder extends Seeder
     {
         // Add Admin User
         User::updateOrCreate(
-            ['email' => 'admin@highguy.test'],
+            ['email' => 'admin@Frank.test'],
             [
-                'name' => 'HighGuy Admin',
-                'full_name' => 'HighGuy Administrator',
-                'password' => Hash::make('password'),
+                'full_name' => 'Frank Administrator',
+                'role' => 'admin',
+                'password' => Hash::make('Password@123'),
                 'email_verified_at' => now(),
             ]
         );
 
-        // Add Developer User
+        // Add Council User
         User::updateOrCreate(
-            ['email' => 'dev@highguy.test'],
+            ['email' => 'council@Frank.test'],
             [
-                'name' => 'Hagai Dev',
-                'full_name' => 'Lead Developer',
-                'password' => Hash::make('password'),
+                'full_name' => 'Council Officer',
+                'role' => 'council',
+                'password' => Hash::make('Password@123'),
                 'email_verified_at' => now(),
             ]
         );
@@ -40,12 +40,13 @@ class UserSeeder extends Seeder
             User::updateOrCreate(
                 ['email' => "user{$i}@example.test"],
                 [
-                    'name' => "Starter User {$i}",
                     'full_name' => "Generic Starter User {$i}",
-                    'password' => Hash::make('password'),
+                    'role' => 'citizen',
+                    'password' => Hash::make('Password@123'),
                     'email_verified_at' => now(),
                 ]
             );
         }
     }
 }
+

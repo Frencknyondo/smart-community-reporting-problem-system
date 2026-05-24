@@ -18,10 +18,6 @@ class RoleMiddleware
             return redirect()->route('login');
         }
 
-        if (in_array((string) ($user->role ?? ''), ['admin', 'hgadmin'], true)) {
-            return $next($request);
-        }
-
         if ($roles === [] || in_array((string) ($user->role ?? ''), $roles, true)) {
             return $next($request);
         }

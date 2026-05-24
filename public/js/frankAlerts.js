@@ -42,6 +42,7 @@
                 color: var(--academic-alert-accent, #0d6efd);
                 font-size: 1.4rem;
                 border: 1px solid var(--academic-alert-icon-border, #d8e6ff);
+                animation: academicAlertPop 0.62s ease both;
             }
 
             .academic-ui-alert__kicker {
@@ -81,6 +82,12 @@
                 align-items: center;
                 justify-content: center;
             }
+
+            @keyframes academicAlertPop {
+                0% { transform: scale(0.72); opacity: 0; }
+                60% { transform: scale(1.08); opacity: 1; }
+                100% { transform: scale(1); opacity: 1; }
+            }
         `;
 
         document.head.appendChild(style);
@@ -96,12 +103,12 @@
         const theme = options.theme || 'success';
         const themeVars = theme === 'success'
             ? {
-                accent: '#0d6efd',
-                bgTop: '#f7fbff',
-                iconBg: '#edf4ff',
-                iconBorder: '#d8e6ff',
-                kicker: '#3d6dcc',
-                title: '#173b7a',
+                accent: '#10b981',
+                bgTop: '#f0fdf4',
+                iconBg: '#dcfce7',
+                iconBorder: '#bbf7d0',
+                kicker: '#047857',
+                title: '#065f46',
                 icon: 'bi-check2-circle',
                 kickerText: options.kicker || 'Success',
             }
