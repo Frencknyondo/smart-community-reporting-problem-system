@@ -1,16 +1,16 @@
 .about-page {
     padding-top: 7rem;
     padding-bottom: 4.5rem;
-    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 42%, #f8fbff 100%);
+    background: linear-gradient(180deg, var(--color-primary-50) 0%, #ffffff 42%, var(--color-primary-50) 100%);
 }
 
 .about-hero-card,
 .about-stat-card,
 .about-value-card {
     background: #ffffff;
-    border: 1px solid rgba(59, 130, 246, 0.16);
+    border: 1px solid rgba(var(--color-primary-500-rgb), 0.16);
     border-radius: 20px;
-    box-shadow: 0 14px 34px rgba(37, 99, 235, 0.08);
+    box-shadow: 0 14px 34px rgba(var(--color-primary-600-rgb), 0.08);
 }
 
 .about-hero-card {
@@ -23,8 +23,8 @@
     gap: 0.45rem;
     padding: 0.4rem 0.8rem;
     border-radius: 999px;
-    background: rgba(59, 130, 246, 0.1);
-    color: #1d4ed8;
+    background: rgba(var(--color-primary-500-rgb), 0.1);
+    color: var(--color-primary-700);
     font-size: 0.8rem;
     line-height: 1.2;
     font-weight: 700;
@@ -41,7 +41,7 @@
 }
 
 .about-copy {
-    color: #64748b;
+    color: var(--color-slate-500);
     line-height: 1.72;
     margin-bottom: 1.5rem;
     font-size: 1rem;
@@ -59,13 +59,13 @@
     display: flex;
     align-items: flex-start;
     gap: 0.6rem;
-    color: #334155;
+    color: var(--color-dark-800);
     font-size: 0.96rem;
     line-height: 1.58;
 }
 
 .about-list i {
-    color: #2563eb;
+    color: var(--color-primary-600);
 }
 
 .about-stat-grid {
@@ -86,20 +86,20 @@
     justify-content: center;
     border-radius: 10px;
     margin-bottom: 0.55rem;
-    background: rgba(59, 130, 246, 0.12);
-    color: #2563eb;
+    background: rgba(var(--color-primary-500-rgb), 0.12);
+    color: var(--color-primary-600);
     font-size: 1rem;
 }
 
 .about-stat-card strong {
     display: block;
     font-size: 1.3rem;
-    color: #1d4ed8;
+    color: var(--color-primary-700);
     line-height: 1.1;
 }
 
 .about-stat-card span {
-    color: #64748b;
+    color: var(--color-slate-500);
     font-size: 0.88rem;
     line-height: 1.45;
 }
@@ -124,8 +124,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(59, 130, 246, 0.12);
-    color: #2563eb;
+    background: rgba(var(--color-primary-500-rgb), 0.12);
+    color: var(--color-primary-600);
     margin-bottom: 0.7rem;
 }
 
@@ -137,7 +137,7 @@
 
 .about-value-card p {
     margin: 0;
-    color: #64748b;
+    color: var(--color-slate-500);
     font-size: 0.94rem;
     line-height: 1.7;
 }
@@ -145,9 +145,9 @@
 .about-stack-card,
 .about-developer-card {
     background: #ffffff;
-    border: 1px solid rgba(59, 130, 246, 0.16);
+    border: 1px solid rgba(var(--color-primary-500-rgb), 0.16);
     border-radius: 20px;
-    box-shadow: 0 14px 34px rgba(37, 99, 235, 0.08);
+    box-shadow: 0 14px 34px rgba(var(--color-primary-600-rgb), 0.08);
     padding: clamp(1rem, 2.4vw, 1.4rem);
     height: 100%;
 }
@@ -159,16 +159,16 @@
 }
 
 .about-stack-item {
-    border: 1px solid rgba(59, 130, 246, 0.16);
+    border: 1px solid rgba(var(--color-primary-500-rgb), 0.16);
     border-radius: 14px;
     padding: 0.8rem 0.7rem;
     text-align: center;
-    background: #f8fbff;
+    background: var(--color-primary-50);
 }
 
 .about-stack-item i {
     font-size: 1.25rem;
-    color: #2563eb;
+    color: var(--color-primary-600);
     display: inline-block;
     margin-bottom: 0.3rem;
 }
@@ -176,13 +176,13 @@
 .about-stack-item span {
     display: block;
     font-size: 0.86rem;
-    color: #475569;
+    color: var(--color-slate-600);
     font-weight: 600;
 }
 
 .about-developer-card p {
     margin: 0 0 0.8rem;
-    color: #64748b;
+    color: var(--color-slate-500);
     line-height: 1.7;
     font-size: 0.96rem;
 }
@@ -195,8 +195,8 @@
 
 .about-developer-meta span {
     border-radius: 999px;
-    background: rgba(59, 130, 246, 0.1);
-    color: #1d4ed8;
+    background: rgba(var(--color-primary-500-rgb), 0.1);
+    color: var(--color-primary-700);
     padding: 0.3rem 0.65rem;
     font-size: 0.8rem;
     font-weight: 700;
@@ -297,7 +297,7 @@
     .about-stack-card,
     .about-developer-card {
         border-radius: 16px;
-        box-shadow: 0 10px 24px rgba(37, 99, 235, 0.06);
+        box-shadow: 0 10px 24px rgba(var(--color-primary-600-rgb), 0.06);
     }
 
     .about-stat-grid {

@@ -19,13 +19,38 @@
             color: #94a3b8;
             font-size: 0.92rem;
         }
+        .footer-brand-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .footer-brand-main {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            min-width: 0;
+        }
+        .footer-brand-main h5 {
+            line-height: 1.25;
+        }
+        @media (max-width: 576px) {
+            .footer-brand-row {
+                align-items: flex-start;
+            }
+            .footer-brand-main h5 {
+                font-size: 0.98rem;
+            }
+        }
     </style>
     <div class="container">
         <div class="row gy-4">
             <div class="col-md-4">
-                <div class="mb-3">
-                    <img src="{{ asset('img/favicon.png') }}" alt="Logo" style="width:48px; height:48px; margin-bottom:12px; object-fit: contain;">
-                    <h5 class="text-white">Smart Community Problem Reporting System</h5>
+                <div class="footer-brand-row mb-3">
+                    <div class="footer-brand-main">
+                        <img src="{{ asset('img/favicon.png') }}" alt="Logo" style="width:48px; height:48px; object-fit: contain;">
+                        <h5 class="text-white mb-0">Smart Community Problem Reporting System</h5>
+                    </div>
                 </div>
                 <p class="footer-note">A civic reporting platform that helps residents submit local issues and keep communities safer through faster council response.</p>
             </div>

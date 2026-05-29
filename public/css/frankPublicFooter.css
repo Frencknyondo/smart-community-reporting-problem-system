@@ -1,7 +1,7 @@
 .footer-wrapper {
     background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(16, 152, 212, 0.12);
+    border-top: 1px solid rgba(var(--color-primary-500-rgb), 0.12);
     padding: 0.85rem 1rem;
     position: fixed;
     bottom: 0;
@@ -21,14 +21,14 @@
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    color: #516d80; /* auth-muted from login page */
+    color: var(--color-slate-600);
     font-family: "Manrope", "Segoe UI", sans-serif;
     font-size: 0.88rem;
     text-align: center;
 }
 
 .footer-school-name {
-    color: #0d6efd;
+    color: var(--color-primary-600);
     font-weight: 700;
 }
 
@@ -39,17 +39,17 @@
 }
 
 .footer-nav-slim a {
-    color: #516d80;
+    color: var(--color-slate-600);
     text-decoration: none;
     transition: color 0.22s ease;
 }
 
 .footer-nav-slim a:hover {
-    color: #0d6efd;
+    color: var(--color-primary-600);
 }
 
 .footer-dot {
-    color: rgba(16, 152, 212, 0.3);
+    color: rgba(var(--color-primary-500-rgb), 0.3);
     font-weight: 800;
 }
 

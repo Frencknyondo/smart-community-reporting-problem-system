@@ -4,7 +4,9 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\NotificationController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\ReportController;
+use App\Http\Controllers\Dashboard\ThemeManagementController;
 use App\Http\Controllers\Dashboard\UserManagementController;
+use App\Http\Controllers\ThemePreferenceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -12,6 +14,9 @@ Route::view('/', 'home')->name('home');
 require __DIR__.'/auth.php';
 Route::view('/home', 'home');
 Route::view('/about', 'about')->name('about');
+Route::post('/theme-preference', ThemePreferenceController::class)
+    ->middleware('auth')
+    ->name('theme.preference.update');
 Route::get('/report', function (Request $request) {
     if (! $request->user()) {
         return redirect()
@@ -44,6 +49,9 @@ Route::middleware('auth')->prefix('dashboard')->name('dashboard.')->group(functi
     Route::get('/user-management/{user}/edit', [UserManagementController::class, 'edit'])->middleware('role:admin')->name('users.edit');
     Route::put('/user-management/{user}', [UserManagementController::class, 'update'])->middleware('role:admin')->name('users.update');
     Route::delete('/user-management/{user}', [UserManagementController::class, 'destroy'])->middleware('role:admin')->name('users.destroy');
+    Route::get('/theme-management', [ThemeManagementController::class, 'index'])->middleware('role:admin')->name('themes.index');
+    Route::post('/theme-management', [ThemeManagementController::class, 'store'])->middleware('role:admin')->name('themes.store');
+    Route::post('/theme-management/{theme}/restore', [ThemeManagementController::class, 'restore'])->middleware('role:admin')->name('themes.restore');
     
     // Notifications
     Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');

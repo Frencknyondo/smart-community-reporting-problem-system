@@ -5,9 +5,9 @@
     <div class="row g-4">
         <div class="col-12 col-xl-4">
             <section class="profile-summary-card h-100">
-                <span class="profile-status-pill profile-status-pill-top">
+                <span class="profile-status-pill profile-status-pill-top profile-status-pill--{{ $user->role ?? 'citizen' }}">
                     <i class="bi bi-shield-check"></i>
-                    System User
+                    {{ ucfirst($user->role ?? 'citizen') }} Account
                 </span>
 
                 <div class="profile-summary-top">
@@ -216,6 +216,24 @@
         font-size: 0.72rem;
         margin-bottom: 0.75rem;
         border: 1px solid rgba(var(--color-primary-500-rgb), 0.16);
+    }
+
+    .profile-status-pill--citizen {
+        background: var(--color-primary-50);
+        color: var(--color-primary-700);
+        border-color: var(--color-primary-200);
+    }
+
+    .profile-status-pill--admin {
+        background: rgba(var(--color-danger-500-rgb), 0.1);
+        color: var(--color-danger-600);
+        border-color: rgba(var(--color-danger-500-rgb), 0.18);
+    }
+
+    .profile-status-pill--council {
+        background: rgba(var(--color-warning-500-rgb), 0.14);
+        color: var(--color-warning-700);
+        border-color: rgba(var(--color-warning-500-rgb), 0.2);
     }
 
     .profile-name {

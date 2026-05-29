@@ -7,7 +7,7 @@
     <style>
         .hero-section {
             padding: 120px 0;
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            background: linear-gradient(135deg, #ffffff 0%, var(--color-primary-50) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -19,7 +19,7 @@
             right: 0;
             width: 40%;
             height: 100%;
-            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+            background: radial-gradient(circle at center, rgba(var(--color-primary-500-rgb), 0.08) 0%, transparent 70%);
         }
 
         .home-hero-title {
@@ -44,7 +44,7 @@
             background: white;
             padding: 24px;
             border-radius: 24px;
-            border: 1px solid #e2e8f0;
+            border: 1px solid rgba(var(--color-primary-500-rgb), 0.14);
             transition: all 0.3s ease;
             height: 100%;
         }
@@ -52,14 +52,14 @@
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-            border-color: #3b82f6;
+            border-color: var(--color-primary-500);
         }
 
         .icon-circle {
             width: 48px;
             height: 48px;
-            background: #eff6ff;
-            color: #3b82f6;
+            background: var(--color-primary-50);
+            color: var(--color-primary-600);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -92,28 +92,28 @@
 
         .hero-feature-item:hover,
         .hero-feature-item:focus-within {
-            background: #eff6ff;
-            border-color: #bfdbfe;
+            background: var(--color-primary-50);
+            border-color: var(--color-primary-200);
             transform: translateX(8px);
-            box-shadow: 0 14px 28px rgba(37, 99, 235, 0.14);
+            box-shadow: 0 14px 28px rgba(var(--color-primary-600-rgb), 0.14);
         }
 
         .hero-feature-item:hover {
-            background: #eff6ff;
-            border-color: #bfdbfe;
+            background: var(--color-primary-50);
+            border-color: var(--color-primary-200);
             transform: translateX(8px);
-            box-shadow: 0 14px 28px rgba(37, 99, 235, 0.14);
+            box-shadow: 0 14px 28px rgba(var(--color-primary-600-rgb), 0.14);
         }
 
         .hero-feature-item .feature-item-icon {
-            background: #dbeafe;
-            color: #2563eb;
+            background: var(--color-primary-50);
+            color: var(--color-primary-600);
             transition: all 0.25s ease;
         }
 
         .hero-feature-item:hover .feature-item-icon,
         .hero-feature-item:focus-within .feature-item-icon {
-            background: #2563eb;
+            background: var(--color-primary-600);
             color: #ffffff;
             transform: scale(1.08);
         }
@@ -124,7 +124,7 @@
 
         .hero-feature-item:hover span,
         .hero-feature-item:focus-within span {
-            color: #2563eb;
+            color: var(--color-primary-600);
         }
 
         .btn-premium {
@@ -138,31 +138,31 @@
         .tech-pill {
             display: inline-block;
             padding: 6px 16px;
-            background: #f1f5f9;
+            background: var(--color-primary-50);
             border-radius: 99px;
             font-size: 0.85rem;
             font-weight: 500;
-            color: #64748b;
+            color: var(--color-slate-500);
             margin: 4px;
         }
 
         .stack-usage-section {
             background: #f8fafc;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid rgba(var(--color-primary-500-rgb), 0.12);
         }
 
         .stack-usage-card {
             height: 100%;
             padding: 22px;
             background: #ffffff;
-            border: 1px solid #e2e8f0;
+            border: 1px solid rgba(var(--color-primary-500-rgb), 0.14);
             border-radius: 16px;
             transition: all 0.3s ease;
         }
 
         .stack-usage-card:hover {
             transform: translateY(-4px);
-            border-color: #3b82f6;
+            border-color: var(--color-primary-500);
             box-shadow: 0 18px 35px rgba(15, 23, 42, 0.07);
         }
 
@@ -173,8 +173,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: #eff6ff;
-            color: #3b82f6;
+            background: var(--color-primary-50);
+            color: var(--color-primary-600);
             font-size: 1.15rem;
             margin-bottom: 14px;
         }
@@ -185,8 +185,8 @@
             gap: 8px;
             padding: 7px 14px;
             border-radius: 999px;
-            background: #e0f2fe;
-            color: #0369a1;
+            background: rgba(var(--color-primary-500-rgb), 0.1);
+            color: var(--color-primary-700);
             font-size: 0.82rem;
             font-weight: 700;
             margin-bottom: 14px;
@@ -240,7 +240,7 @@
         .stat-card {
             background: #ffffff;
             border-radius: 20px;
-            border: 1px solid #e2e8f0;
+            border: 1px solid rgba(var(--color-primary-500-rgb), 0.14);
             box-shadow: 0 16px 30px rgba(15, 23, 42, 0.05);
         }
 
@@ -257,21 +257,21 @@
         .report-step-card p,
         .recent-report-card p,
         .stat-card p {
-            color: #475569;
+            color: var(--color-slate-600);
             margin-bottom: 0;
         }
 
         .stat-card {
             padding: 28px;
-            background: #fffbeb;
-            border-color: #f5ddb7;
+            background: rgba(var(--color-primary-500-rgb), 0.08);
+            border-color: rgba(var(--color-primary-500-rgb), 0.16);
         }
 
         .stat-number {
             font-size: 1.85rem;
             line-height: 1;
             font-weight: 800;
-            color: #92400e;
+            color: var(--color-primary-700);
         }
 
         @media (max-width: 575.98px) {
@@ -456,7 +456,7 @@
                         <a href="{{ route('report.start') }}" class="btn btn-primary btn-premium shadow-lg">
                             Report an Issue <i class="bi bi-arrow-right ms-2"></i>
                         </a>
-                        <a href="/about" class="btn btn-outline-dark btn-premium">
+                        <a href="/about" class="btn btn-outline-primary btn-premium">
                             Learn More <i class="bi bi-info-circle ms-2"></i>
                         </a>
                     </div>
@@ -477,7 +477,7 @@
         </div>
     </section>
 
-    <section class="stack-usage-section py-5">
+    <section class="stack-usage-section home-how-helps-section py-5 bg-white">
         <div class="container py-4">
             <div class="row align-items-end mb-4">
                 <div class="col-lg-7">

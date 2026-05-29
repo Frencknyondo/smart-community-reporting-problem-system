@@ -107,6 +107,12 @@ class DashboardController extends Controller
                     'route' => route('dashboard.users.index'),
                 ],
                 [
+                    'label' => 'Theme Management',
+                    'detail' => 'Manage light theme colors',
+                    'icon' => 'bi-palette-fill',
+                    'route' => route('dashboard.themes.index'),
+                ],
+                [
                     'label' => 'Notifications',
                     'detail' => $unreadNotifications.' unread alerts',
                     'icon' => 'bi-bell-fill',

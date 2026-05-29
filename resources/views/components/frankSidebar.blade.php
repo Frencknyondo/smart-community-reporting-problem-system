@@ -53,6 +53,12 @@
                         <i class="bi bi-people-fill"></i> User Management
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('dashboard.themes.index') }}"
+                        class="nav-link {{ request()->routeIs('dashboard.themes.index') ? 'active' : '' }}">
+                        <i class="bi bi-palette-fill"></i> Theme Management
+                    </a>
+                </li>
             @endif
 
             <li class="nav-item">
@@ -61,7 +67,7 @@
                     <i class="bi bi-bell-fill"></i> Notifications
                 </a>
             </li>
-
+        </ul>
 
             <div class="frank-sidebar-footer">
                 <div class="frank-sidebar-footer__copy">&copy; 2025 Smart Community Problem Reporting System</div>
@@ -70,20 +76,20 @@
 </aside>
 
 <style>
-        .frank-sidebar .nav-link {
-            border-radius: 12px;
-            margin-bottom: 4px;
-            padding: 10px 16px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
+    .frank-sidebar .nav-link {
+        border-radius: 12px;
+        margin-bottom: 4px;
+        padding: 10px 16px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
 
-        .frank-sidebar .nav-link:hover {
-            background: rgba(var(--color-primary-500-rgb), 0.08);
-            color: var(--color-primary-500);
-        }
+    .frank-sidebar .nav-link:hover {
+        background: rgba(var(--color-primary-500-rgb), 0.08);
+        color: var(--color-primary-500);
+    }
 
-        .frank-sidebar .nav-link.active {
+    .frank-sidebar .nav-link.active {
         color: var(--color-white);
         box-shadow: 0 8px 16px rgba(var(--color-primary-500-rgb), 0.2);
     }

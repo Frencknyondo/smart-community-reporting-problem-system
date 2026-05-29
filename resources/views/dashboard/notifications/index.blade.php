@@ -37,9 +37,10 @@
     <style>
         .notification-page-card {
             background: #ffffff;
-            border: 1px solid #e5e7eb;
+            border: 1px solid rgba(var(--color-primary-500-rgb), 0.14);
             border-radius: 14px;
             padding: 1.25rem;
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.04);
         }
         .notification-list {
             display: grid;
@@ -55,6 +56,12 @@
             border: 1px solid #e5e7eb;
             background: #f8fafc;
             text-decoration: none;
+            transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+        }
+        .notification-row:hover {
+            background: var(--color-primary-50);
+            border-color: var(--color-primary-200);
+            transform: translateY(-1px);
         }
         .notification-row--unread {
             background: var(--color-primary-50);
@@ -69,7 +76,8 @@
             justify-content: center;
             flex-shrink: 0;
             color: var(--color-primary-600);
-            background: #ffffff;
+            background: var(--color-primary-50);
+            border: 1px solid rgba(var(--color-primary-500-rgb), 0.12);
         }
         .notification-row strong,
         .notification-row span,
