@@ -77,7 +77,6 @@
 @endsection
 
 @push('styles')
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     <style>
         .report-panel {
             background: #ffffff;
@@ -111,7 +110,6 @@
 @endpush
 
 @push('scripts')
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const reports = @json($reports->items());

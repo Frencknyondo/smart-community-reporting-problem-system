@@ -65,7 +65,7 @@
             <div class="col-md-2">
                 <div class="footer-link-title">Resources</div>
                 <ul class="list-unstyled mb-0">
-                    <li><a href="/about">FAQs</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#faqModal">FAQs</a></li>
                     <li><a href="/contact">Contact us</a></li>
                     <li><a href="#">Privacy</a></li>
                 </ul>
@@ -84,4 +84,51 @@
         </div>
     </div>
 </footer>
+
+<div class="modal fade" id="faqModal" tabindex="-1" aria-labelledby="faqModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="faqModalLabel">FAQs — Smart Community Problem Reporting System</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <h6 class="fw-semibold">FOR CITIZENS/COUNCILS</h6>
+                </div>
+                <div class="mb-3">
+                    <p class="fw-bold mb-1">1. How do I submit a report?</p>
+                    <p>Open the app, tap "Submit Report", select a category (e.g. "Broken streetlight", "Pothole", "Noise"), write a detailed description, take a photo, confirm the GPS location, and tap "Submit". Your report will be visible to the admin and organizations responsible for that service area.</p>
+                </div>
+                <div class="mb-3">
+                    <p class="fw-bold mb-1">2. Why does the app need my GPS location?</p>
+                    <p>GPS helps organizations locate the exact issue quickly and prioritize resolution efficiently. Your location is private — only the organization assigned to your report and admin can see the precise location. You remain safe.</p>
+                </div>
+                <div class="mb-3">
+                    <p class="fw-bold mb-1">3. How do I track the progress of my report?</p>
+                    <p>Tap the "My Reports" tab, select your report, and check its status: Pending → Assigned → In Progress → Resolved → Closed. The assigned organization will send you notifications with each update.</p>
+                </div>
+                <div class="mb-3">
+                    <p class="fw-bold mb-1">4. Why is my report stuck on "Pending" for so long?</p>
+                    <p>All reports go through a queue. Admin reviews first, then assigns to the appropriate organization based on urgency and workload. To get faster resolution, provide detailed description and a clear photo of the issue.</p>
+                </div>
+                <div class="mb-3">
+                    <p class="fw-bold mb-1">5. Can I delete my report?</p>
+                    <p>No — all reports are permanent in the system for audit trail and transparency purposes. However, you can message the assigned organization and request cancellation if the issue has been resolved elsewhere or is no longer necessary.</p>
+                </div>
+                <div class="mb-3">
+                    <p class="fw-bold mb-1">6. Why is my password required to be strong?</p>
+                    <p>For security — your resident data and report history are protected by encryption. A weak password makes your account vulnerable to hackers, putting your personal data and reports at risk.</p>
+                </div>
+                <div class="mb-0">
+                    <p class="fw-bold mb-1">7. I forgot my password. Why didn't I receive the reset email?</p>
+                    <p>Check your spam folder first. If still no email, tap "Resend reset email" or contact <a href="mailto:support@smartcommunity.local">support@smartcommunity.local</a>. Password reset links expire after 30 minutes for security.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 

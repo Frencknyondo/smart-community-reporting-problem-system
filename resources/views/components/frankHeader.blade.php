@@ -115,7 +115,9 @@
                 @if(!empty($currentUser?->passport))
                     <img src="{{ asset('storage/' . $currentUser->passport) }}" alt="Profile Picture" class="profile-avatar" />
                 @else
-                    <img src="https://ui-avatars.com/api/?name={{ urlencode($displayName) }}&background=2563eb&color=fff&size=40" alt="Profile Picture" class="profile-avatar" />
+                    <span class="profile-avatar profile-avatar-fallback" aria-label="Profile Picture">
+                        {{ collect(explode(' ', trim($displayName)))->filter()->take(2)->map(fn ($part) => mb_substr($part, 0, 1))->implode('') ?: 'U' }}
+                    </span>
                 @endif
                 <span class="ms-2 d-none d-md-inline fw-normal header-user-name">{{ $displayName }}</span>
             </a>

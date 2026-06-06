@@ -237,7 +237,6 @@
 @endsection
 
 @push('styles')
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     <style>
         .report-panel {
             background: #ffffff;
@@ -338,7 +337,6 @@
 @endpush
 
 @push('scripts')
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         function showReportDetails(id, title, description, location, status, category, imageUrl) {
             document.getElementById('modalReportTitle').textContent = title;

@@ -3,7 +3,6 @@
 @section('title', 'Smart Community Problem Reporting System')
 
 @push('critical-head')
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     <style>
         .hero-section {
             padding: 120px 0;
@@ -662,7 +661,6 @@
 @endsection
 
 @push('scripts')
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const mapElement = document.getElementById('home-hero-map');

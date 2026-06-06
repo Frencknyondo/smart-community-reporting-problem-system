@@ -274,6 +274,18 @@ body.sidebar-collapsed #sidebarToggleIcon {
     border: 2px solid rgba(var(--color-primary-500-rgb), 0.24);
 }
 
+.profile-avatar-fallback {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--header-primary);
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
 .header-theme-icon {
     color: var(--header-primary) !important;
 }

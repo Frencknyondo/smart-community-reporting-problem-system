@@ -197,7 +197,6 @@
 @endsection
 
 @push('styles')
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     <style>
         .citizen-dashboard {
             color: #111827;
@@ -570,7 +569,6 @@
 @endpush
 
 @push('scripts')
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const reports = @json($mapReports);

@@ -23,17 +23,9 @@
         })();
     </script>
 
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    @vite(['resources/css/vendor.css', 'resources/js/app.js'])
     <link href="{{ asset('css/rootcolor.css') }}" rel="stylesheet">
     @include('theme')
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700;900&display=swap"
-        rel="stylesheet">
 
 
     <!-- Custom CSS -->
@@ -82,9 +74,6 @@
     </main>
 
     @include('components.footer')
-
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom JS -->
     <script src="{{ asset('js/frankPublicHeader.js') }}"></script>
